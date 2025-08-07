@@ -40,7 +40,7 @@ const Contact = () => {
       setLoading(false);
     })
     .catch((error) => {
-      alert('Gagal mengirim pesan. Coba lagi nanti.');
+      alert('Ups! Pesan nggak terkirim nih. DM saja lewat Instagram, ya. Lagi saya perbaiki kok.');
       setLoading(false);
     });
   };
