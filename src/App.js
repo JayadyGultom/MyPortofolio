@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import AnimatedShapes from './components/AnimatedShapes';
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
+import BlogDetail from './components/BlogDetail';
 import AOS from 'aos';
 
 function App() {
@@ -16,16 +12,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <AnimatedShapes />
-      <Navbar />
-      <Hero />
-      <TechStack />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
