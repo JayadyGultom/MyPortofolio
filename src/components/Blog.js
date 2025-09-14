@@ -20,10 +20,19 @@ const Blog = () => {
       category: "Technology",
       readTime: "25 min read",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      id: 3,
+      title: "Algoritma Sorting: Dari Bubble Sort hingga Quick Sort",
+      excerpt: "Algoritma sorting adalah fondasi dalam ilmu komputer. Mari kita eksplorasi berbagai teknik sorting, mulai dari yang sederhana hingga yang efisien, dan kapan menggunakan masing-masing...",
+      date: "3 Januari 2025",
+      category: "Programming",
+      readTime: "15 min read",
+      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
-  const categories = ["All", "Technology"];
+  const categories = ["All", "Technology", "Programming"];
 
   return (
     <section className="blog-section">

@@ -3,14 +3,14 @@ import React from 'react';
 const defaultImg = "https://ui-avatars.com/api/?name=Your+Name&background=4ecdc4&color=fff&size=256&rounded=true";
 let profileImg;
 try {
-  profileImg = require('../asset/MyProfil.jpeg');
+  profileImg = require('../asset/Profil.jpg');
 } catch {
   profileImg = defaultImg;
 }
 
 const Hero = () => {
   return (
-    <section id="home" className="hero">
+    <section id="profile" className="hero" style={{scrollMarginTop: '80px'}}>
       <div className="hero-container">
         <div className="profile-photo">
           <img src={profileImg} alt="Profile" />

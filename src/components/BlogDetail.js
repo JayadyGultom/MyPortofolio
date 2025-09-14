@@ -473,6 +473,220 @@ const BlogDetail = () => {
         
         <p>Internet bukan hanya sekadar jaringan kabel dan sinyal. Ia adalah bukti betapa manusia mampu menciptakan sistem yang menghubungkan dunia, menyatukan informasi, dan memungkinkan kita terhubung, hanya dalam satu ketukan jari.</p>
       `
+    },
+    {
+      id: 3,
+      title: "Algoritma Sorting: Dari Bubble Sort hingga Quick Sort",
+      excerpt: "Algoritma sorting adalah fondasi dalam ilmu komputer. Mari kita eksplorasi berbagai teknik sorting, mulai dari yang sederhana hingga yang efisien, dan kapan menggunakan masing-masing...",
+      date: "3 Januari 2025",
+      category: "Programming",
+      readTime: "15 min read",
+      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      content: `
+        <p>Dalam dunia pemrograman, ada satu konsep fundamental yang harus dipahami setiap developer: algoritma sorting. Bayangkan kamu memiliki tumpukan kartu yang acak, dan kamu ingin mengurutkannya dari yang terkecil hingga terbesar. Bagaimana cara melakukannya dengan efisien?</p>
+        
+        <p>Algoritma sorting adalah metode untuk mengatur data dalam urutan tertentu (biasanya dari kecil ke besar atau sebaliknya). Meskipun terlihat sederhana, pemilihan algoritma yang tepat bisa membuat perbedaan besar dalam performa aplikasi.</p>
+
+        <h3 id="mengapa-sorting-penting">Mengapa Sorting Penting?</h3>
+        <p>Sorting bukan hanya soal mengatur data. Dalam banyak kasus, sorting adalah langkah awal untuk algoritma lain yang lebih kompleks:</p>
+        <p>• <strong>Binary Search:</strong> Mencari data dalam array yang sudah terurut jauh lebih cepat<br/>
+        • <strong>Database Operations:</strong> Query database sering memerlukan data yang terurut<br/>
+        • <strong>Data Analysis:</strong> Statistik dan analisis data membutuhkan data yang terorganisir<br/>
+        • <strong>User Interface:</strong> Menampilkan daftar yang terurut membuat pengalaman pengguna lebih baik</p>
+
+        <h3 id="bubble-sort">Bubble Sort: Yang Paling Sederhana</h3>
+        <p>Bubble Sort adalah algoritma sorting yang paling mudah dipahami. Konsepnya seperti gelembung udara yang naik ke permukaan—elemen yang lebih besar "mengapung" ke atas.</p>
+        
+        <p><strong>Cara Kerja Bubble Sort:</strong></p>
+        <p>1. Bandingkan dua elemen yang berdekatan<br/>
+        2. Jika elemen pertama lebih besar dari elemen kedua, tukar posisinya<br/>
+        3. Lanjutkan ke pasangan elemen berikutnya<br/>
+        4. Ulangi proses hingga tidak ada lagi pertukaran yang diperlukan</p>
+
+        <p style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; font-family: monospace;">
+        // Contoh implementasi Bubble Sort dalam JavaScript<br/>
+        function bubbleSort(arr) {<br/>
+        &nbsp;&nbsp;let n = arr.length;<br/>
+        &nbsp;&nbsp;for (let i = 0; i < n-1; i++) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;for (let j = 0; j < n-i-1; j++) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[j] > arr[j+1]) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Tukar elemen<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let temp = arr[j];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j] = arr[j+1];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j+1] = temp;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;return arr;<br/>
+        }
+        </p>
+
+        <p><strong>Kompleksitas Bubble Sort:</strong></p>
+        <p>• <strong>Time Complexity:</strong> O(n²) - untuk kasus terburuk dan rata-rata<br/>
+        • <strong>Space Complexity:</strong> O(1) - hanya menggunakan ruang konstan<br/>
+        • <strong>Stable:</strong> Ya - elemen dengan nilai sama tidak berubah urutan relatifnya</p>
+
+        <h3 id="selection-sort">Selection Sort: Mencari yang Terkecil</h3>
+        <p>Selection Sort bekerja dengan cara mencari elemen terkecil dari array yang belum terurut, lalu menempatkannya di posisi yang tepat.</p>
+        
+        <p><strong>Cara Kerja Selection Sort:</strong></p>
+        <p>1. Cari elemen terkecil dalam array<br/>
+        2. Tukar dengan elemen di posisi pertama<br/>
+        3. Cari elemen terkecil kedua dalam sisa array<br/>
+        4. Tukar dengan elemen di posisi kedua<br/>
+        5. Ulangi hingga semua elemen terurut</p>
+
+        <p style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; font-family: monospace;">
+        // Contoh implementasi Selection Sort<br/>
+        function selectionSort(arr) {<br/>
+        &nbsp;&nbsp;let n = arr.length;<br/>
+        &nbsp;&nbsp;for (let i = 0; i < n-1; i++) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;let minIdx = i;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;for (let j = i+1; j < n; j++) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (arr[j] < arr[minIdx]) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minIdx = j;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// Tukar elemen<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;let temp = arr[i];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;arr[i] = arr[minIdx];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;arr[minIdx] = temp;<br/>
+        &nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;return arr;<br/>
+        }
+        </p>
+
+        <h3 id="insertion-sort">Insertion Sort: Seperti Mengurutkan Kartu</h3>
+        <p>Insertion Sort bekerja seperti cara kita mengurutkan kartu di tangan. Kita mengambil satu kartu dan menempatkannya di posisi yang tepat di antara kartu yang sudah terurut.</p>
+        
+        <p><strong>Cara Kerja Insertion Sort:</strong></p>
+        <p>1. Mulai dari elemen kedua<br/>
+        2. Bandingkan dengan elemen sebelumnya<br/>
+        3. Jika lebih kecil, geser elemen sebelumnya ke kanan<br/>
+        4. Lanjutkan hingga menemukan posisi yang tepat<br/>
+        5. Ulangi untuk elemen berikutnya</p>
+
+        <h3 id="quick-sort">Quick Sort: Divide and Conquer</h3>
+        <p>Quick Sort adalah salah satu algoritma sorting yang paling efisien. Ia menggunakan pendekatan "divide and conquer" (bagi dan taklukkan).</p>
+        
+        <p><strong>Cara Kerja Quick Sort:</strong></p>
+        <p>1. Pilih elemen sebagai "pivot" (biasanya elemen terakhir)<br/>
+        2. Atur ulang array sehingga elemen yang lebih kecil dari pivot ada di kiri, yang lebih besar di kanan<br/>
+        3. Rekursif terapkan Quick Sort pada sub-array kiri dan kanan<br/>
+        4. Gabungkan hasilnya</p>
+
+        <p style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; font-family: monospace;">
+        // Contoh implementasi Quick Sort<br/>
+        function quickSort(arr, low = 0, high = arr.length - 1) {<br/>
+        &nbsp;&nbsp;if (low < high) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// Partisi array<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;let pivotIndex = partition(arr, low, high);<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// Rekursif sort sub-array<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;quickSort(arr, low, pivotIndex - 1);<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;quickSort(arr, pivotIndex + 1, high);<br/>
+        &nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;return arr;<br/>
+        }<br/><br/>
+        function partition(arr, low, high) {<br/>
+        &nbsp;&nbsp;let pivot = arr[high];<br/>
+        &nbsp;&nbsp;let i = low - 1;<br/>
+        &nbsp;&nbsp;for (let j = low; j < high; j++) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;if (arr[j] < pivot) {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Tukar elemen<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let temp = arr[i];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = arr[j];<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j] = temp;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;// Tukar pivot ke posisi yang tepat<br/>
+        &nbsp;&nbsp;let temp = arr[i + 1];<br/>
+        &nbsp;&nbsp;arr[i + 1] = arr[high];<br/>
+        &nbsp;&nbsp;arr[high] = temp;<br/>
+        &nbsp;&nbsp;return i + 1;<br/>
+        }
+        </p>
+
+        <p><strong>Kompleksitas Quick Sort:</strong></p>
+        <p>• <strong>Time Complexity:</strong> O(n log n) - rata-rata, O(n²) - kasus terburuk<br/>
+        • <strong>Space Complexity:</strong> O(log n) - karena rekursi<br/>
+        • <strong>Unstable:</strong> Ya - elemen dengan nilai sama bisa berubah urutan relatifnya</p>
+
+        <h3 id="perbandingan-algoritma">Perbandingan Algoritma Sorting</h3>
+        <p>Setiap algoritma memiliki kelebihan dan kekurangan. Berikut perbandingannya:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr style="background: rgba(78, 205, 196, 0.1);">
+        <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Algoritma</th>
+        <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Time Complexity</th>
+        <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Space Complexity</th>
+        <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Stable</th>
+        <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Kapan Digunakan</th>
+        </tr>
+        <tr>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Bubble Sort</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(n²)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(1)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Ya</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Data kecil, pembelajaran</td>
+        </tr>
+        <tr>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Selection Sort</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(n²)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(1)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Tidak</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Data kecil, memori terbatas</td>
+        </tr>
+        <tr>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Insertion Sort</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(n²)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(1)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Ya</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Data kecil, hampir terurut</td>
+        </tr>
+        <tr>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Quick Sort</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(n log n)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">O(log n)</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Tidak</td>
+        <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.2);">Data besar, performa tinggi</td>
+        </tr>
+        </table>
+
+        <h3 id="kapan-menggunakan-algoritma-mana">Kapan Menggunakan Algoritma Mana?</h3>
+        <p><strong>Gunakan Bubble Sort jika:</strong></p>
+        <p>• Data sangat kecil (kurang dari 50 elemen)<br/>
+        • Kamu sedang belajar konsep sorting<br/>
+        • Implementasi sederhana lebih penting daripada performa</p>
+
+        <p><strong>Gunakan Selection Sort jika:</strong></p>
+        <p>• Data kecil dan memori terbatas<br/>
+        • Kamu ingin meminimalkan jumlah pertukaran<br/>
+        • Performa tidak terlalu kritis</p>
+
+        <p><strong>Gunakan Insertion Sort jika:</strong></p>
+        <p>• Data kecil dan hampir terurut<br/>
+        • Kamu membutuhkan algoritma yang stable<br/>
+        • Implementasi sederhana dengan performa yang baik</p>
+
+        <p><strong>Gunakan Quick Sort jika:</strong></p>
+        <p>• Data besar dan performa penting<br/>
+        • Kamu tidak memerlukan algoritma yang stable<br/>
+        • Memori tidak terlalu terbatas</p>
+
+        <h3 id="praktik-terbaik">Praktik Terbaik dalam Sorting</h3>
+        <p>1. <strong>Pilih algoritma yang tepat:</strong> Sesuaikan dengan ukuran data dan kebutuhan performa<br/>
+        2. <strong>Optimasi untuk kasus umum:</strong> Pertimbangkan karakteristik data yang paling sering muncul<br/>
+        3. <strong>Gunakan library yang sudah dioptimasi:</strong> Untuk produksi, gunakan implementasi yang sudah teruji<br/>
+        4. <strong>Benchmark performa:</strong> Test dengan data real untuk memastikan performa sesuai ekspektasi</p>
+
+        <h3>Kesimpulan</h3>
+        <p>Algoritma sorting adalah fondasi penting dalam pemrograman. Meskipun terlihat sederhana, pemahaman yang mendalam tentang berbagai algoritma sorting akan membantu kamu menjadi developer yang lebih baik.</p>
+        
+        <p>Mulailah dengan algoritma yang sederhana seperti Bubble Sort untuk memahami konsep dasar, lalu lanjutkan ke algoritma yang lebih efisien seperti Quick Sort. Ingat, tidak ada algoritma yang sempurna untuk semua situasi—pilih yang paling sesuai dengan kebutuhan proyekmu.</p>
+        
+        <p>Dengan menguasai konsep sorting, kamu tidak hanya bisa mengurutkan data, tetapi juga memahami pola pikir algoritmik yang akan berguna dalam memecahkan masalah pemrograman yang lebih kompleks.</p>
+      `
     }
   ];
 

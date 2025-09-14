@@ -5,6 +5,7 @@ import BlogDetail from '../components/BlogDetail';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedShapes from '../components/AnimatedShapes';
+import AudioPlayer from '../components/AudioPlayer';
 
 const BlogPage = () => {
   return (
@@ -16,6 +17,7 @@ const BlogPage = () => {
         <Route path="/:id" element={<BlogDetail />} />
       </Routes>
       <Footer />
+      <AudioPlayer />
     </div>
   );
 };

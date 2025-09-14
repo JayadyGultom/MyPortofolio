@@ -7,6 +7,7 @@ import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedShapes from '../components/AnimatedShapes';
+import AudioPlayer from '../components/AudioPlayer';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <About />
       <Contact />
       <Footer />
+      <AudioPlayer />
     </div>
   );
 };
