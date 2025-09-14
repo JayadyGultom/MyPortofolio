@@ -278,7 +278,6 @@ body {
 /* Projects Section */
 .projects {
   padding: 6rem 2rem;
-  background: #111;
 }
 .projects-container {
   max-width: 1200px;
@@ -381,7 +380,6 @@ body {
 /* About Section */
 .about {
   padding: 6rem 2rem;
-  background: #111;
 }
 .about-container {
   max-width: 800px;
@@ -403,7 +401,6 @@ body {
 /* Contact Section */
 .contact {
   padding: 6rem 2rem;
-  background: #111;
 }
 .contact-container {
   max-width: 600px;
@@ -473,7 +470,6 @@ body {
 }
 /* Footer */
 .footer {
-  background: #111;
   color: #e0e0e0;
   padding: 3rem 2rem;
   text-align: center;
@@ -677,7 +673,6 @@ body {
 
 .techstack {
   padding: 4rem 2rem 2rem 2rem;
-  background: #111;
 }
 .techstack-grid {
   display: grid;

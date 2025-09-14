@@ -1,3 +1,4 @@
+import AudioPlayer from '../components/AudioPlayer';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Blog from '../components/Blog';
@@ -5,11 +6,12 @@ import BlogDetail from '../components/BlogDetail';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedShapes from '../components/AnimatedShapes';
-import AudioPlayer from '../components/AudioPlayer';
+
 
 const BlogPage = () => {
   return (
     <div className="App">
+      <AudioPlayer />
       <AnimatedShapes />
       <Navbar />
       <Routes>
@@ -17,7 +19,6 @@ const BlogPage = () => {
         <Route path="/:id" element={<BlogDetail />} />
       </Routes>
       <Footer />
-      <AudioPlayer />
     </div>
   );
 };
